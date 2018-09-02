@@ -1,7 +1,7 @@
-Name: HealthBars
-Version: 1.1
-Author: KubeRoot
+Name: HealthbarsFix
+Version: 1.2
+Author: NothingSpecial
 
-DLL: Healthbars.dll
+DLL: HealthbarsFix.dll
 
 Depends: Base 0.2

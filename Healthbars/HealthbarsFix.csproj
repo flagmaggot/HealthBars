@@ -7,8 +7,8 @@
     <ProjectGuid>{20A8E03E-229F-4642-B001-247E1CCC324A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Healthbars</RootNamespace>
-    <AssemblyName>Healthbars</AssemblyName>
+    <RootNamespace>HealthbarsFix</RootNamespace>
+    <AssemblyName>HealthbarsFix</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -61,10 +61,15 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="metadata.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>C:\"Program Files"\7-Zip\7z.exe a HealthBars.zip HealthBars.dll metadata.txt
-copy HealthBars.zip "D:\SteamGames\steamapps\common\Enter the Gungeon\Mods"\HealthBars.zip</PostBuildEvent>
+    <PostBuildEvent>copy $(ProjectDir)\metadata.txt $(TargetDir)\metadata.txt
+copy HealthbarsFix.dll $(TargetDir)\HealthbarsFix.dll
+C:\"Program Files"\7-Zip\7z.exe a HealthbarsFix.zip HealthbarsFix.dll metadata.txt
+copy HealthbarsFix.zip "D:\SteamGames\steamapps\common\Enter the Gungeon\Mods"\HealthbarsFix.zip</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

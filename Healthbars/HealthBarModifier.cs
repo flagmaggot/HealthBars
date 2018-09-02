@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Healthbars
+namespace HealthbarsFix
 {
-    class HealthBar : SModifier
+    class HealthbarFix : SModifier
     {
         private HealthHaver m_HealthHaver;
         private BraveBehaviour m_parent;
@@ -16,7 +16,7 @@ namespace Healthbars
         private SRect m_interiorbg;
         private Vector2 m_offset = new Vector2(0, 8);
 
-        public HealthBar(BraveBehaviour parent)
+        public HealthbarFix(BraveBehaviour parent)
         {
             m_parent = parent;
             m_HealthHaver = m_parent.healthHaver;

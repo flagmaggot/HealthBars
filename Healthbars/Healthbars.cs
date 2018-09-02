@@ -6,9 +6,9 @@ using UnityEngine;
 using SGUI;
 using Dungeonator;
 
-namespace Healthbars
+namespace HealthbarsFix
 {
-    class HealthBarBehavior : MonoBehaviour
+    class HealthbarBehavior : MonoBehaviour
     {
         BraveBehaviour parent;
         SGroup bar;
@@ -44,7 +44,7 @@ namespace Healthbars
                 Size = new Vector2(50, 10),
                 With =
                 {
-                    new HealthBar(parent)
+                    new HealthbarFix(parent)
                 },
                 Border = 2f
             };
@@ -58,8 +58,8 @@ namespace Healthbars
         {
             foreach (AIActor t in StaticReferenceManager.AllEnemies)
             {
-                if (t.GetComponent<HealthBarBehavior>() == null)
-                    t.gameObject.AddComponent<HealthBarBehavior>();
+                if (t.GetComponent<HealthbarBehavior>() == null)
+                    t.gameObject.AddComponent<HealthbarBehavior>();
             }
         }
     }
@@ -68,8 +68,8 @@ namespace Healthbars
     {
         private void OnNewEnemy(Component component)
         {
-            if (component.GetComponent<HealthBarBehavior>() == null)
-                component.gameObject.AddComponent<HealthBarBehavior>();
+            if (component.GetComponent<HealthbarBehavior>() == null)
+                component.gameObject.AddComponent<HealthbarBehavior>();
         }
 
         public override void Start()

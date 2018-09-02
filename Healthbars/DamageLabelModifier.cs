@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using SGUI;
 
-namespace Healthbars
+namespace HealthbarsFix
 {
     class DamageLabelModifier : SModifier
     {
