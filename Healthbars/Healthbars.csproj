@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\ETGMod\libs\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp-reference">
+      <HintPath>..\..\EntertheGungeonVanilla - Copy\EtG_Data\Assembly-CSharp-reference.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp.Base.mm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EntertheGungeonVanilla - Copy\EtG_Data\Managed\Assembly-CSharp.Base.mm.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,8 +43,13 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\ETGMod\libs\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine.Base.mm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EntertheGungeonVanilla - Copy\EtG_Data\Managed\UnityEngine.Base.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EntertheGungeonVanilla - Copy\EtG_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -52,13 +61,11 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ETGMod\Assembly-CSharp.Base.mm\Assembly-CSharp.Base.mm.csproj">
-      <Project>{363a46e8-d9dd-4f31-9307-73b664e71d45}</Project>
-      <Name>Assembly-CSharp.Base.mm</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>C:\"Program Files"\7-Zip\7z.exe a HealthBars.zip HealthBars.dll metadata.txt
+copy HealthBars.zip "D:\SteamGames\steamapps\common\Enter the Gungeon\Mods"\HealthBars.zip</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

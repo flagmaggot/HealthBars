@@ -48,11 +48,19 @@ namespace Healthbars
                 },
                 Border = 2f
             };
-
             parent.healthHaver.OnDeath += OnDeath;
             parent.healthHaver.OnHealthChanged += OnHealthChanged;
 
             lastHealth = parent.healthHaver.GetCurrentHealth();
+        }
+
+        public void Update()
+        {
+            foreach (AIActor t in StaticReferenceManager.AllEnemies)
+            {
+                if (t.GetComponent<HealthBarBehavior>() == null)
+                    t.gameObject.AddComponent<HealthBarBehavior>();
+            }
         }
     }
 
@@ -60,7 +68,7 @@ namespace Healthbars
     {
         private void OnNewEnemy(Component component)
         {
-            if(component.GetComponent<HealthBarBehavior>() == null)
+            if (component.GetComponent<HealthBarBehavior>() == null)
                 component.gameObject.AddComponent<HealthBarBehavior>();
         }
 
@@ -74,8 +82,10 @@ namespace Healthbars
         {
         }
 
+
         public override void Exit()
         {
         }
     }
 }
+
